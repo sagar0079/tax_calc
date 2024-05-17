@@ -1,0 +1,411 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    /* background: rebeccapurple; */
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.container h3 {
+    /* text-align: center; */
+    /* position: absolute; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 220px;
+}
+
+.tax-cal {
+    background: rgb(224, 221, 228);
+    height: 40%;
+    width: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    border: 1px solid gray;
+    padding: 30px;
+}
+
+.tax-cal > div.main {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    margin-top: 20px;
+    /* gap: 30px; */
+}
+
+.tax-cal > div.main input {
+    width: 100%;
+    font-size: 17px;
+    /* border: none; */
+}
+
+.tax-cal > div.main .g_div {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 5px;
+    align-items: center;
+    /* justify-content: center; */
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.tax-cal > div.main .g_div label {
+    font-weight: 600;
+}
+
+.tax-cal > div.main .g_div span {
+    font-size: 22px;
+}
+
+.tax-cal > div.main .g_div > span.help {
+    position: absolute;
+    right: 142px;
+    top: -2px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tax-cal > div.main .g_div > span.help.sec {
+    right: 203px;
+}
+
+.tax-cal > div.main .g_div > span.help.ter {
+    right: 225px;
+}
+.tax-cal > div.main .g_div > span.help.qur {
+    right: 95px;
+}
+
+.tax-cal > div.main .g_div > span.help .box_help {
+    position: absolute;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; If you want dots under the hoverable text */
+    top: -87px;
+    right: -72px;
+    height: 80px;
+    width: 180px;
+    background: black;
+    pointer-events: none;
+    text-align: center;
+    border-radius: 4px;
+    visibility: hidden;
+    transition: 250ms all ease-in-out;
+    /* padding-top: 5px; */
+}
+
+.tax-cal > div.main .g_div > span.help:hover::after,
+.tax-cal > div.main .g_div > span.help:hover .box_help {
+    visibility: visible;
+}
+
+.tax-cal > div.main .g_div > span.help .box_help p {
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 13px;
+    width: 100%;
+    height: 100%;
+    line-height: 20px;
+    margin-top: 5px;
+    text-wrap: wrap;
+}
+
+.tax-cal > div.main .g_div > span.help::after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    /* background: greenyellow; */
+    /* border: 10px solid transparent; */
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 8px solid black;
+    /* border-top-color: black; */
+    visibility: hidden;
+    left: 49.6%;
+    top: -5%;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    transition: 250ms all ease-in-out;
+
+}
+
+.tax-cal > div.main .g_div .box_help > span.help {
+    /* width: 50px;
+    height: 50px; */
+    /* background-color: orange; */
+    /* color: black; */
+    /* text-align: center; */
+    /* padding: 10px 10px; */
+    /* border-radius: 6px; */
+    /* top: 98px;
+    left: -3.5px;
+    position: relative; */
+    /* text-wrap: nowrap; */
+    /* padding: 10px 15px;
+    border-radius: 6px; */
+    /* z-index: 1; */
+    /* margin: auto; */
+}
+
+.tax-cal > div.main .c_div {
+    display: flex;
+    position: relative;
+}
+
+.tax-cal > div.main .c_div span {
+    position: absolute;
+    right: 3px;
+    font-size: 18px;
+    top: 3px;
+    color: rgb(166, 174, 180);
+    display: none;
+}
+
+.tax-cal > div.main .c_div select {
+    width: 100%;
+    font-size: 17px;
+}
+
+.tax-cal > div.main .c_div .box_err {
+    /* background: gray;
+    color: aqua;
+    height: 30px;
+    width: 80px; */
+}
+
+.tax-cal > div.main .c_div .box_err span.error-message {
+    display: none;
+    color: red;
+    position: absolute;
+    top: -16px;
+    right: -25px;
+    font-size: 13px;
+}
+
+.active-border {
+    border: 1px solid blue;
+}
+
+.error-border {
+    border: 1px solid red;
+}
+.error-border-2 {
+    border: 1px solid red;
+}
+
+input[type="text"] {
+    /* border: none; */
+    outline: none; /* Remove default focus outline */
+}
+
+.custom-error-message {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tax-cal > div.main .c_div .box_err {
+    position: absolute;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; If you want dots under the hoverable text */
+    top: -25px;
+    right: 0;
+    height: 50px;
+    width: 180px;
+    pointer-events: none;
+    /* background: #555; */
+}
+  
+  /* Tooltip text */
+.tax-cal > div.main .c_div .box_err .error-message {
+    /* visibility: hidden; */
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 6px;
+    /* top: -1600px; */
+    left: 92px;
+    /* top: 150px; */
+    position: absolute;
+   
+    /* Position the tooltip text - see examples below! */
+    /* position: absolute; */
+    /* z-index: 1; */
+}
+
+.tax-cal > div.main .c_div .box_err::after {
+      content: '';
+      width: 0px;
+      height: 13px;
+      /* background: greenyellow; */
+      /* border: 10px solid transparent; */
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-top: 8px solid #555;
+      border-top-color: black;
+      visibility: hidden;
+      left: 93.5%;
+      top: 60%;
+      position: absolute;
+      transform: translateX(-50%) translateY(-50%);
+}
+
+.tax-cal > div.main .c_div .box_err.show-after::after {
+    visibility: visible;
+}
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext,
+  .tooltip:hover::after {
+    visibility: visible;
+  }
+
+  .tax-cal > div.main .c_div .box_err-2 span.error-message-2 {
+    display: none;
+    color: red;
+    position: absolute;
+    top: -16px;
+    right: -25px;
+    font-size: 13px;
+}
+
+.tax-cal > div.main .c_div .box_err-2 {
+    position: absolute;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; If you want dots under the hoverable text */
+    top: -25px;
+    right: 0;
+    height: 50px;
+    width: 180px;
+    pointer-events: none;
+    /* background: #555; */
+}
+  
+  /* Tooltip text */
+.tax-cal > div.main .c_div .box_err-2 .error-message-2 {
+    /* visibility: hidden; */
+    width: 130px;
+    background-color: black;
+    /* color: #fff; */
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 6px;
+    /* top: -1600px; */
+    left: 92px;
+    /* top: 150px; */
+    position: absolute;
+    text-wrap: nowrap;
+   
+    /* Position the tooltip text - see examples below! */
+    /* position: absolute; */
+    /* z-index: 1; */
+}
+
+.tax-cal > div.main .c_div .box_err-2::after {
+      content: '';
+      width: 0px;
+      height: 13px;
+      /* background: greenyellow; */
+      /* border: 10px solid transparent; */
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-top: 8px solid #555;
+      border-top-color: black;
+      visibility: hidden;
+      left: 93.5%;
+      top: 60%;
+      position: absolute;
+      transform: translateX(-50%) translateY(-50%);
+}
+
+.tax-cal > div.main .c_div .box_err-2.show-after::after {
+    visibility: visible;
+}
+.tax-cal > div.main .c_div .box_err-2.show-after-2::after {
+    visibility: visible;
+}
+
+.tax-cal #submitBtn {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    width: 86%;
+    margin-bottom: 50px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #fff;
+    background: black;
+    cursor: pointer;
+}
+
+.tax-cal #submitBtn:hover {
+    background: gray;
+}
+
+.tax_res {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 80vh;
+    background: aqua;
+    position: relative;
+    border: 3px solid black;
+    /* z-index: -1; */
+    /* top: -900px; */
+    visibility: hidden;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -170%);
+    /* padding-bottom: 30px; */
+}
+
+.tax_res .sal_box {
+    display: flex;
+    flex-direction: column;
+}
+
+.tax_res h1 {
+    font-size: 700;
+}
+
+.tax_res p {
+    text-align: center;
+    font-size: 50px;
+}
+
+.tax_res span {
+    text-align: center;
+}
+
+.tax_res button {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 50px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #fff;
+    background: black;
+    cursor: pointer;
+}
+
+.tax_res button:hover {
+    background: gray;
+}

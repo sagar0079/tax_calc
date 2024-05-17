@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css"> -->
+</head>
+<body>
+    <div class="container">
+        <h3>Tax Calculator</h3>
+        <div class="tax-cal">
+            <div class="main">
+                <div class="g_div">
+                    <label for="income">Enter gross annual income</label>
+                    <span class="material-icons help">help<div class="box_help"><p>Gross annual income is your total salary in a year before any deductions</p></div></span>
+                </div>
+                <div class="c_div">
+                    <input type="text" id="income" required>
+                    <div class="box_err"><span class="error-message">Enter numbers only</span></div>
+                    <span class="material-icons error-icon">error</span>
+                </div>
+            </div>
+            <div class="main">
+                <div class="g_div">
+                    <label for="e_inc">Enter extra income</label>
+                    <span class="material-icons help sec">help<div class="box_help"><p>This includes income earned from dividends, interest on deposits and bonds</p></div></span>
+                </div>
+                <div class="c_div">
+                    <input type="text" id="e_inc" required>
+                    <div class="box_err"><span class="error-message">Enter numbers only</span></div>
+                    <span class="material-icons error-icon">error</span>
+                </div>
+            </div>
+            <div class="main">
+                <div class="g_div">
+                    <label for="">Enter age group</label>
+                    <span class="material-icons help ter">help<div class="box_help"><p><br>Enter your age</p></div></span>
+                </div>
+                <div class="c_div">
+                    <select name="age" id="age">
+                        <option value="0" selected></option>
+                        <option value="1">&lt; 40</option>
+                        <option value="2">&ge; 40 & &lt; 60</option>
+                        <option value="3">&ge; 60</option>
+                    </select>
+                    <div class="box_err-2"><span class="error-message-2">input field is Mandatory</span></div>
+                    <span class="material-icons error-icon-2">error</span>
+                </div>
+            </div>
+            <div class="main">
+                <div class="g_div">
+                    <label for="dedc">Enter total applicable deductions</label>
+                    <span class="material-icons help qur">help<div class="box_help"><p>This includes medical insurance premium, donation to charity, educational loan etc..</p></div></span>
+                </div>
+                <div class="c_div">
+                    <input type="text" id="dedc">
+                    <div class="box_err"><span class="error-message">Enter numbers only</span></div>
+                    <span class="material-icons error-icon">error</span>
+                </div>
+            </div>
+            <button id="submitBtn" type="button">Submit</button>
+        </div>
+    </div>
+    <div class="tax_res">
+        <div class="sal_box">
+            <h1>Your overall income will be</h1>
+            <p id="finalsal"></p>
+            <span>after tax deductions</span>
+        </div>
+        <button type="button">close</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="jquery.js"></script>
+</body>
+</html>
